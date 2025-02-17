@@ -6,17 +6,17 @@ my_db =  mysql.connector.connect(
     password = "@Eminemshady16"
 )
 
-if my_db.is_connected():
+try:
+    my_db.is_connected()
     print("Database 'alx_book_store' created successfully!")
-else:
+except:
+    my_db.connector.error()
     print("Failed")
+else:
+    cursor = my_db.cursor()
+    my_query = "CREATE DATABASE IF NOT EXISTS alx_book_store"
+    cursor.execute(my_query)
 
-cursor = my_db.cursor()
-
-my_query = "CREATE DATABASE IF NOT EXISTS alx_book_store"
-cursor.execute(my_query)
-
-
-
-cursor.close()
-my_db.close()
+finally:
+    cursor.close()
+    my_db.close()
