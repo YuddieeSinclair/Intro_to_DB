@@ -16,7 +16,6 @@ else:
     cursor = my_db.cursor()
     my_query = "CREATE DATABASE IF NOT EXISTS alx_book_store"
     cursor.execute(my_query)
-
 finally:
     cursor.close()
     my_db.close()
