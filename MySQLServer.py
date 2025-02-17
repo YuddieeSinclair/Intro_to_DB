@@ -10,7 +10,7 @@ try:
     my_db.is_connected()
     print("Database 'alx_book_store' created successfully!")
 except:
-    my_db.connector.error()
+    my_db.connector.Error()
     print("Failed")
 else:
     cursor = my_db.cursor()
